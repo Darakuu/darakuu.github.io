@@ -6,7 +6,7 @@ draft: false
 <!--- custom zenmode auto-enabler --->
 {{< zenmode-enabled >}}
 
-## [Click HERE](CV_ElvioSantangelo.pdf) to download! 
+## [Click HERE](resources/CV_ElvioSantangelo.pdf) to download! 
 
 # Timeline
 
