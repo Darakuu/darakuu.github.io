@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Calque_1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 612 612"
+     xml:space="preserve">
+
+  <defs>
+    <!-- original shape, already centered around 306,306 -->
+    <path id="SVGID_1_"
+          d="M275.09,430.05l30.92-18.28l30.91,17.78l-30.92,18.28L275.09,430.05z
+             M190.1,380.98l30.89-17.77l70.8,40.96l-30.59,17.77L190.1,380.98z
+             M320.01,404.17l70.8-40.96l30.89,17.78l-70.89,40.96L320.01,404.17z
+             M235.21,355.09L306,314.12l70.8,40.96L306,396.04L235.21,355.09z
+             M227.99,269.05L291.99,306l-63.99,36.95V269.05z
+             M320.01,306l64.1-36.95v73.9L320.01,306z
+             M183.09,243.14l30.9,17.78v90.04l-30.9,17.88V243.14z
+             M398.02,351.08v-90.15l30.89-17.78v125.91L398.02,351.08z
+             M235.2,256.92l70.8-40.96l70.8,40.96L306,297.98L235.2,256.92z
+             M190.09,231.02L306,164.16l115.91,66.86l-30.9,17.88L306,200.23
+             l-85.01,48.66L190.09,231.02z
+             M306,148.01L169.08,227v157.99L306,463.99l136.92-78.99V227L306,148.01z"/>
+    <clipPath id="SVGID_CLIP">
+      <use xlink:href="#SVGID_1_" style="overflow:visible;"/>
+    </clipPath>
+  </defs>
+
+  <!-- full-viewport black rectangle, clipped to the original shape -->
+  <rect x="0" y="0" width="612" height="612"
+        fill="#000"
+        clip-path="url(#SVGID_CLIP)"/>
+
+</svg>
