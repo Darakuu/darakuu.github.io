@@ -1,0 +1,95 @@
+{{/* layouts/shortcodes/callout.html */}}
+
+{{/* pull params, with sane defaults */}}
+{{ $icon        := default "triangle-exclamation" (.Get "icon") }}
+{{ $iconColor   := .Get "iconColor" }}
+{{ $cardColor   := .Get "cardColor" }}
+{{ $textColor   := .Get "textColor" }}
+{{ $foldable    := default "false" (.Get "foldable") }}
+{{ $startFolded := default "false" (.Get "startFolded") }}
+{{ $title       := .Get "title" }}
+
+{{ if eq $foldable "true" }}
+  {{/* scoped CSS for arrow + animation */}}
+  <style>
+    /* arrow rotation */
+    .callout-foldable > summary > .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease-in-out;
+    }
+    .callout-foldable[open] > summary > .arrow {
+      transform: rotate(90deg);
+    }
+
+    /* content slide */
+    .callout-foldable > .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+    .callout-foldable[open] > .content {
+      /* large enough to hold your content */
+      max-height: 1000px;
+    }
+  </style>
+
+  <details
+    class="callout-foldable rounded-md mb-4 flex flex-col  
+           {{ if not $cardColor }}bg-primary-100 dark:bg-primary-900{{ end }}"
+    {{ if $cardColor }}style="background-color: {{ $cardColor }};"{{ end }}
+    {{ if eq $startFolded "true" }}open{{ end }}
+  >
+    <summary class="flex items-center px-4 py-3 cursor-pointer select-none">
+      {{ if $icon }}
+        <span
+          class="ltr:pr-3 rtl:pl-3 flex items-center"
+          {{ if $iconColor }}style="color: {{ $iconColor }};"{{ end }}
+        >
+          {{ partial "icon.html" $icon }}
+        </span>
+      {{ end }}
+
+      <span
+        class="font-semibold"
+        {{ if $textColor }}style="color: {{ $textColor }};"{{ end }}
+      >
+        {{ $title }}
+      </span>
+
+      {{/* the little arrow on the right */}}
+      <span class="ml-auto arrow" aria-hidden="true">&gt;</span>
+    </summary>
+
+    <div
+      class="content px-4 py-3 border-t  
+             {{ if not $cardColor }}border-primary-200 dark:border-primary-800{{ end }}"
+      {{ if $textColor }}style="color: {{ $textColor }};"{{ end }}
+    >
+      {{ .Inner | markdownify }}
+    </div>
+  </details>
+
+{{ else }}
+  {{/* non‐foldable just as before */}}
+  <div
+    class="flex items-start px-4 py-3 rounded-md mb-4  
+           {{ if not $cardColor }}bg-primary-100 dark:bg-primary-900{{ end }}"
+    {{ if $cardColor }}style="background-color: {{ $cardColor }};"{{ end }}
+  >
+    {{ if $icon }}
+      <span
+        class="ltr:pr-3 rtl:pl-3 flex items-center"
+        {{ if $iconColor }}style="color: {{ $iconColor }};"{{ end }}
+      >
+        {{ partial "icon.html" $icon }}
+      </span>
+    {{ end }}
+    <div
+      class="flex-1"
+      {{ if $textColor }}style="color: {{ $textColor }};"{{ end }}
+    >
+      {{ if $title }}<strong>{{ $title }}</strong>{{ end }}
+      {{ .Inner | markdownify }}
+    </div>
+  </div>
+{{ end }}
