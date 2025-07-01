@@ -38,7 +38,7 @@ I also enjoy playing ♟️chess a lot to unwind, and I read a lot of technical 
 
 ## Maya
 
-I am also proudly owned by my cat Maya. Here is an obligatory gallery of her:
+I am also proudly owned by my cat Maya, a little kitten that I saved from the streets, she's about 2 years old now. Here is an obligatory gallery of her:
 
 {{< gallery >}}
   <img src="gallery/maya_2.jpg" class="grid-w33" />
