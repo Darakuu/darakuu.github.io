@@ -3,10 +3,32 @@ title: "About Me"
 draft: false
 ---
 
-<!--- custom zenmode auto-enabler: No, breaks gallery. --->
+<!--- custom zenmode auto-enabler: Not here, breaks gallery. --->
+
+{{< callout icon="hashnode" iconColor="#42d232" cardColor="#11321e" textColor="#8bb5ab"  foldable="true" startFolded="false"  title="My Setup's specs (click to expand):" >}}
+<ul>
+  <li> - OS: Windows 11 Pro 64-bit
+  <li> - CPU: 13th Gen Intel(R) Core(TM) i7-13700KF 
+  <li> - RAM: 65536 MB (64~ GBs) 
+  <li> - GPU: NVIDIA GeForce RTX 4070
+  <li> - Displays: 3
+  <ul>
+    <li> - ASUS VG27AQ1A 2560 x 1440 (144Hz), HDR
+    <li> - ASUS VN247 1920 x 1080(p) (60Hz)
+    <li> - ASUS VS228 1920 x 1080(p) (60Hz)
+  </ul>
+  <li> - Dedicated microphone, webcam and headphones,
+  <li> - Logitech G413 SE mechanical keyboard
 
 
-(_This section can be updated at any time_)
+</ul>
+{{< /callout >}}
+
+
+## Location
+
+I live and work in Catania, in Sicily, a vibrant Mediterranean city nestled at the foot of Mount Etna.  
+I'm on Central European Time (UTC+1, UTC+2 in summer), and have a fully equipped home studio that lets me collaborate seamlessly with teams around the globe.  
 
 ## Interests
 
