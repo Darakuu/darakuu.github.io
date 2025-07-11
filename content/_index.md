@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="OODAvwe4xfMpRRhUGbppqO67apc8QTooe7CXdbdzUGQ" />
-
 ## Hi, I'm Elvio Santangelo, and I'm a...
 {{< typeit 
   tag=h3
