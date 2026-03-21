@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">LIS sign language recognition feature art</title>
+  <desc id="desc">Abstract machine-learning inspired composition for the LIS recognition article.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1220" />
+      <stop offset="55%" stop-color="#1f2342" />
+      <stop offset="100%" stop-color="#10203a" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <circle cx="280" cy="210" r="170" fill="#71d8ff" fill-opacity=".12" />
+  <circle cx="1320" cy="720" r="250" fill="#7dffb2" fill-opacity=".09" />
+  <g fill="none" stroke="#71d8ff" stroke-opacity=".55" stroke-width="3">
+    <path d="M180 220H560V600H180Z" />
+    <path d="M260 300H640V680H260Z" />
+    <path d="M340 380H720V760H340Z" />
+  </g>
+  <g fill="#d9f6ff">
+    <circle cx="180" cy="220" r="10" />
+    <circle cx="560" cy="220" r="10" />
+    <circle cx="560" cy="600" r="10" />
+    <circle cx="640" cy="300" r="10" />
+    <circle cx="720" cy="760" r="10" />
+    <circle cx="980" cy="270" r="10" />
+    <circle cx="1180" cy="420" r="10" />
+    <circle cx="1290" cy="320" r="10" />
+    <circle cx="1420" cy="470" r="10" />
+  </g>
+  <g stroke="#7dffb2" stroke-width="4">
+    <path d="M560 220L980 270L1180 420L1420 470" fill="none" />
+    <path d="M560 600L990 620L1270 700" fill="none" />
+  </g>
+  <text x="110" y="780" fill="#eef9ff" font-family="Segoe UI, Arial, sans-serif" font-size="88" font-weight="700">LIS Sign Language Recognition</text>
+  <text x="116" y="840" fill="#9bd3e7" font-family="Segoe UI, Arial, sans-serif" font-size="28" letter-spacing="6">CNN  DATA PIPELINE  COMPUTER VISION</text>
+</svg>
