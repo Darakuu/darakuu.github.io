@@ -8,87 +8,167 @@
 {{ $foldable    := default "false" (.Get "foldable") }}
 {{ $startFolded := default "false" (.Get "startFolded") }}
 {{ $title       := .Get "title" }}
+{{ $styleParts  := slice }}
+
+{{ if $cardColor }}
+  {{ $styleParts = $styleParts | append (printf "--callout-surface: %s" $cardColor) }}
+{{ end }}
+{{ if $textColor }}
+  {{ $styleParts = $styleParts | append (printf "--callout-copy: %s" $textColor) }}
+{{ end }}
+{{ if $iconColor }}
+  {{ $styleParts = $styleParts | append (printf "--callout-icon-color: %s" $iconColor) }}
+{{ end }}
+
+{{ $calloutStyle := delimit $styleParts "; " }}
 
 {{ if eq $foldable "true" }}
-  {{/* scoped CSS for arrow + animation */}}
-  <style>
-    /* arrow rotation */
-    .callout-foldable > summary > .arrow {
-      display: inline-block;
-      transition: transform 0.2s ease-in-out;
-    }
-    .callout-foldable[open] > summary > .arrow {
-      transform: rotate(90deg);
-    }
-
-    /* content slide */
-    .callout-foldable > .content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-    }
-    .callout-foldable[open] > .content {
-      /* large enough to hold your content */
-      max-height: 1000px;
-    }
-  </style>
-
   <details
-    class="callout-foldable rounded-md mb-4 flex flex-col  
-           {{ if not $cardColor }}bg-primary-100 dark:bg-primary-900{{ end }}"
-    {{ if $cardColor }}style="background-color: {{ $cardColor }};"{{ end }}
+    class="site-callout site-callout--foldable"
+    {{ if $calloutStyle }}{{ printf "style=%q" (printf "%s;" $calloutStyle) | safeHTMLAttr }}{{ end }}
     {{ if eq $startFolded "true" }}open{{ end }}
   >
-    <summary class="flex items-center px-4 py-3 cursor-pointer select-none">
+    <summary class="site-callout__summary">
       {{ if $icon }}
-        <span
-          class="ltr:pr-3 rtl:pl-3 flex items-center"
-          {{ if $iconColor }}style="color: {{ $iconColor }};"{{ end }}
-        >
+        <span class="site-callout__icon" aria-hidden="true">
           {{ partial "icon.html" $icon }}
         </span>
       {{ end }}
 
-      <span
-        class="font-semibold"
-        {{ if $textColor }}style="color: {{ $textColor }};"{{ end }}
-      >
-        {{ $title }}
-      </span>
-
-      {{/* the little arrow on the right */}}
-      <span class="ml-auto arrow" aria-hidden="true">&gt;</span>
+      <span class="site-callout__title">{{ $title }}</span>
+      <span class="site-callout__toggle" aria-hidden="true">&gt;</span>
     </summary>
 
-    <div
-      class="content px-4 py-3 border-t  
-             {{ if not $cardColor }}border-primary-200 dark:border-primary-800{{ end }}"
-      {{ if $textColor }}style="color: {{ $textColor }};"{{ end }}
-    >
+    <div class="site-callout__content">
       {{ .Inner | markdownify }}
     </div>
   </details>
+  <script>
+    (() => {
+      const details = document.currentScript.previousElementSibling;
+      if (!(details instanceof HTMLDetailsElement) || details.dataset.calloutEnhanced === "true") {
+        return;
+      }
+
+      const summary = details.querySelector(".site-callout__summary");
+      const content = details.querySelector(".site-callout__content");
+      if (!(summary instanceof HTMLElement) || !(content instanceof HTMLElement)) {
+        return;
+      }
+      if (typeof details.animate !== "function" || typeof content.animate !== "function") {
+        return;
+      }
+
+      details.dataset.calloutEnhanced = "true";
+
+      let heightAnimation;
+      let contentAnimation;
+
+      const prefersReducedMotion = () =>
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const clearInlineState = () => {
+        details.style.height = "";
+        details.style.overflow = "";
+      };
+
+      const stopAnimations = () => {
+        if (heightAnimation) {
+          heightAnimation.cancel();
+          heightAnimation = undefined;
+        }
+        if (contentAnimation) {
+          contentAnimation.cancel();
+          contentAnimation = undefined;
+        }
+      };
+
+      const finalize = (open) => {
+        details.open = open;
+        clearInlineState();
+      };
+
+      const animateContent = (opening) => {
+        contentAnimation = content.animate(
+          opening
+            ? [
+                { opacity: 0, transform: "translateY(-0.35rem)" },
+                { opacity: 1, transform: "translateY(0)" }
+              ]
+            : [
+                { opacity: 1, transform: "translateY(0)" },
+                { opacity: 0, transform: "translateY(-0.25rem)" }
+              ],
+          {
+            duration: opening ? 280 : 180,
+            easing: opening ? "cubic-bezier(0.22, 1, 0.36, 1)" : "ease-out",
+            fill: "both"
+          }
+        );
+      };
+
+      const animateHeight = (startHeight, endHeight, open) => {
+        details.style.height = startHeight;
+        details.style.overflow = "hidden";
+
+        heightAnimation = details.animate(
+          { height: [startHeight, endHeight] },
+          {
+            duration: open ? 340 : 220,
+            easing: open ? "cubic-bezier(0.22, 1, 0.36, 1)" : "cubic-bezier(0.4, 0, 1, 1)",
+            fill: "both"
+          }
+        );
+
+        heightAnimation.onfinish = () => {
+          finalize(open);
+        };
+
+        heightAnimation.oncancel = () => {
+          clearInlineState();
+        };
+      };
+
+      summary.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        if (prefersReducedMotion()) {
+          details.open = !details.open;
+          return;
+        }
+
+        const startHeight = `${details.offsetHeight}px`;
+        stopAnimations();
+
+        if (details.open) {
+          animateContent(false);
+          animateHeight(startHeight, `${summary.offsetHeight}px`, false);
+          return;
+        }
+
+        details.open = true;
+        requestAnimationFrame(() => {
+          animateContent(true);
+          animateHeight(
+            startHeight,
+            `${summary.offsetHeight + content.offsetHeight}px`,
+            true
+          );
+        });
+      });
+    })();
+  </script>
 
 {{ else }}
-  {{/* non‐foldable just as before */}}
-  <div
-    class="flex items-start px-4 py-3 rounded-md mb-4  
-           {{ if not $cardColor }}bg-primary-100 dark:bg-primary-900{{ end }}"
-    {{ if $cardColor }}style="background-color: {{ $cardColor }};"{{ end }}
-  >
+  <div class="site-callout site-callout--static" {{ if $calloutStyle }}{{ printf "style=%q" (printf "%s;" $calloutStyle) | safeHTMLAttr }}{{ end }}>
     {{ if $icon }}
-      <span
-        class="ltr:pr-3 rtl:pl-3 flex items-center"
-        {{ if $iconColor }}style="color: {{ $iconColor }};"{{ end }}
-      >
+      <span class="site-callout__icon" aria-hidden="true">
         {{ partial "icon.html" $icon }}
       </span>
     {{ end }}
-    <div
-      class="flex-1"
-      {{ if $textColor }}style="color: {{ $textColor }};"{{ end }}
-    >
-      {{ if $title }}<strong>{{ $title }}</strong>{{ end }}
+
+    <div class="site-callout__copy">
+      {{ if $title }}<p class="site-callout__title site-callout__title--static">{{ $title }}</p>{{ end }}
       {{ .Inner | markdownify }}
     </div>
   </div>
