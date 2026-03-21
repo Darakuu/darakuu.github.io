@@ -1,0 +1,113 @@
+{{/* layouts/shortcodes/protected-email.html */}}
+{{ $label := default "Portfolio Email" (.Get "label") }}
+{{ $user := default "your.name" (.Get "user") }}
+{{ $domain := default "example.com" (.Get "domain") }}
+{{ $subject := .Get "subject" }}
+{{ $cta := default "Reveal Email" (.Get "cta") }}
+{{ $copyCta := default "Copy" (.Get "copyCta") }}
+{{ $copiedText := default "Copied" (.Get "copiedText") }}
+{{ $display := default (printf "%s [at] %s" $user (replace $domain "." " [dot] ")) (.Get "display") }}
+
+<div
+  class="protected-email"
+  {{ printf "data-user=%q" $user | safeHTMLAttr }}
+  {{ printf "data-domain=%q" $domain | safeHTMLAttr }}
+  {{ if $subject }}{{ printf "data-subject=%q" $subject | safeHTMLAttr }}{{ end }}
+>
+  <div class="protected-email__meta">
+    <span class="protected-email__label">{{ $label }}</span>
+    <span class="protected-email__value" aria-live="polite">{{ $display }}</span>
+  </div>
+
+  <div class="protected-email__actions">
+    <button
+      type="button"
+      class="protected-email__button protected-email__button--primary"
+      {{ printf "data-default-label=%q" $cta | safeHTMLAttr }}
+      {{ printf "data-revealed-label=%q" "Open Mail App" | safeHTMLAttr }}
+    >
+      {{ $cta }}
+    </button>
+    <button
+      type="button"
+      class="protected-email__button protected-email__button--secondary"
+      {{ printf "data-default-label=%q" $copyCta | safeHTMLAttr }}
+      {{ printf "data-copied-label=%q" $copiedText | safeHTMLAttr }}
+    >
+      {{ $copyCta }}
+    </button>
+  </div>
+</div>
+<script>
+  (() => {
+    const root = document.currentScript.previousElementSibling;
+    if (!(root instanceof HTMLElement) || root.dataset.protectedEmailReady === "true") {
+      return;
+    }
+
+    const revealButton = root.querySelector(".protected-email__button--primary");
+    const copyButton = root.querySelector(".protected-email__button--secondary");
+    const value = root.querySelector(".protected-email__value");
+    if (!(revealButton instanceof HTMLButtonElement) ||
+        !(copyButton instanceof HTMLButtonElement) ||
+        !(value instanceof HTMLElement)) {
+      return;
+    }
+
+    root.dataset.protectedEmailReady = "true";
+
+    const user = root.dataset.user || "";
+    const domain = root.dataset.domain || "";
+    const subject = root.dataset.subject || "";
+    const email = `${user}@${domain}`;
+    const query = subject ? `?subject=${encodeURIComponent(subject)}` : "";
+    const mailto = `mailto:${email}${query}`;
+    const defaultReveal = revealButton.dataset.defaultLabel || "Reveal Email";
+    const revealedLabel = revealButton.dataset.revealedLabel || "Open Mail App";
+    const defaultCopy = copyButton.dataset.defaultLabel || "Copy";
+    const copiedLabel = copyButton.dataset.copiedLabel || "Copied";
+    let revealed = false;
+
+    const reveal = () => {
+      if (revealed) {
+        window.location.href = mailto;
+        return;
+      }
+
+      value.textContent = email;
+      revealButton.textContent = revealedLabel;
+      revealed = true;
+    };
+
+    revealButton.addEventListener("click", reveal);
+
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        value.textContent = email;
+        revealButton.textContent = revealedLabel;
+        copyButton.textContent = copiedLabel;
+        revealed = true;
+        window.setTimeout(() => {
+          copyButton.textContent = defaultCopy;
+        }, 1400);
+      } catch (error) {
+        value.textContent = email;
+        revealButton.textContent = revealedLabel;
+        revealed = true;
+      }
+    });
+
+    root.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" && !revealed) {
+        reveal();
+      }
+    });
+
+    revealButton.addEventListener("blur", () => {
+      if (!revealed) {
+        revealButton.textContent = defaultReveal;
+      }
+    });
+  })();
+</script>

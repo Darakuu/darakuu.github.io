@@ -22,7 +22,6 @@ title = "Elvio Santangelo"
   headline = "BSc Computer Science, Game Developer"
   bio = "Italian Game Dev"
   links = [
-    { email = "mailto:elviost@gmail.com" },
     { github = "https://github.com/Darakuu" },
     { linkedin = "https://www.linkedin.com/in/elviosant/" },
     { steam = "https://steamcommunity.com/id/Darakuu/" },

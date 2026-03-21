@@ -28,6 +28,12 @@
   pageRef = "aboutme"
   weight = 30
 
+[[main]]
+  name = "Contact"
+  pre = "envelope"
+  pageRef = "contact"
+  weight = 40
+
 #[[main]]
 #  name = "example sub-menu 1"
 #  parent = "Parent"
