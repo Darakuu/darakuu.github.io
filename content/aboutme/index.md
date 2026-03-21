@@ -1,5 +1,6 @@
 ---
 title: "About Me"
+description: "Background, setup, location, interests, and personal details about Elvio Santangelo."
 draft: false
 ---
 

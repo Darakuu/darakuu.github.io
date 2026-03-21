@@ -11,12 +11,11 @@ title = "Elvio Santangelo"
   dateFormat = "2006 January 2"
   logo = "img/DarakAvatar9_circle_64x64.png"
   # secondaryLogo = "img/DarakAvatar8_circle_64x64.png"
-  description = "Personal potfolio website"
+  description = "Portfolio website of Elvio Santangelo, C++ Unreal Engine gameplay programmer focused on multiplayer systems, AI, and level design."
   copyright = "© 2025 Elvio Santangelo"
 
 [params.author]
   name = "Elvio Santangelo"
-  email = "elviost@gmail.com"
   image = "img/DarakElvio-circle.png"
   imageQuality = 96
   headline = "BSc Computer Science, Game Developer"

@@ -1,5 +1,6 @@
 ---
 title: "Resume"
+description: "Resume and professional timeline for Elvio Santangelo, C++ Unreal Engine gameplay programmer."
 draft: false
 ---
 

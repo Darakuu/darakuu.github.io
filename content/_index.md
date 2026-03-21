@@ -1,3 +1,7 @@
+---
+description: "Portfolio homepage for Elvio Santangelo, C++ Unreal Engine gameplay programmer working across multiplayer gameplay, AI, and level design."
+---
+
 <div class="home-inline-intro">
   <h3 class="home-inline-intro__title">Hi, I'm Elvio, and I'm a...</h3>
   {{< typeit class="home-inline-intro__typeit" tag=h3 speed=70 breakLines=false loop=true lifeLike=true >}}
