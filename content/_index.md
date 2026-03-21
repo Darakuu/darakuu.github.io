@@ -1,33 +1,54 @@
-## Hi, I'm Elvio Santangelo, and I'm a...
-{{< typeit 
-  tag=h3
-  speed=70
-  breakLines=false
-  loop=true
-  lifeLike=true
->}}
+<div class="home-inline-intro">
+  <h3 class="home-inline-intro__title">Hi, I'm Elvio, and I'm a...</h3>
+  {{< typeit class="home-inline-intro__typeit" tag=h3 speed=70 breakLines=false loop=true lifeLike=true >}}
 Game Developer
 Software Engineer
 Level Designer
 {{< /typeit >}}
+</div>
 
-### Professional Experience
+<div class="home-open-layout">
+  <div class="home-open-layout__main">
+  <p class="home-open-layout__label">Professional Experience</p>
+    <p>
+      I am a C++ Unreal Engine 5 Gameplay Programmer. My most recent professional role was at Bevium,
+      where I worked until November 2025 on multiplayer projects.
+    </p>
+    <p>
+      Most of my work has been around AI, gameplay systems, replication, build workflows with UBT/UAT,
+      and some level design when needed. I hold a Bachelor's degree in Computer Science and I am currently
+      pursuing a Master's degree in Computer Science.
+    </p>
+  </div>
+  <div class="home-open-layout__side">
+    <p class="home-open-layout__label">Outside work</p>
+    <p>
+      I have also been modding Source Engine games for well over a decade, especially Half-Life 2,
+      Garry's Mod, and Black Mesa. My favorite part has always been building maps and playable spaces
+      from scratch.
+    </p>
+  </div>
+</div>
 
----
+<div class="home-skill-strip">
+  <span>C++</span>
+  <span>Unreal Engine 5</span>
+  <span>Multiplayer</span>
+  <span>AI</span>
+  <span>Level Design</span>
+</div>
 
-
-I am a C++ Unreal Engine 5 Game Developer at [Bevium](https://bevium.it/). I hold a Bachelor's degree in Computer Science and I am currently pursuing a Master's degree in Computer Science.
-
-My experience with Unreal Engine covers a wide territory. I have mostly focused on AI development using behavior trees, building customizable build workflows via UBT/UAT for faster iteration, C++ gameplay programming, and level design, from initial blockouts to finalized visuals. 
-
-A showcase of my work is available on my [Projects](/projects) page.
-
-A brief timeline of my professional experience is available on my [Resume](/resume) page.
-
-### Game Development Passion
-
----
-
-For over a decade, I have also been modding Source Engine games, like Half-Life 2, Garry's Mod, or Black Mesa. My main passion has been creating custom maps with the Hammer editor, but I have also dabbled in small custom mods with the Source SDK.
-
-I am very passionate about Game Development and Design, willing to innovate and explore creative solutions to make awesome games, unrestricted by boring standards.
+<nav class="home-route-grid">
+  <a class="home-route" href="/projects">
+    <span>Projects</span>
+    <small>See the actual work</small>
+  </a>
+  <a class="home-route" href="/resume">
+    <span>Resume</span>
+    <small>Read the full timeline</small>
+  </a>
+  <a class="home-route" href="/aboutme">
+    <span>About Me</span>
+    <small>Get the human version</small>
+  </a>
+</nav>

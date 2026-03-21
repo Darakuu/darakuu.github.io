@@ -1,3 +1,4 @@
+/* Site palette overrides */
 :root {
   --color-neutral: 255, 255, 255;
   --color-neutral-50: 203, 255, 227;
@@ -32,7 +33,7 @@
   --color-secondary-900: 4, 20, 28;
 }
 
-/* Resume page customization */
+/* Resume page */
 .resume-page {
   margin-bottom: 2.5rem;
 }
@@ -166,5 +167,329 @@
 
   .resume-cta {
     width: 100%;
+  }
+}
+
+/* Homepage on top of the original Blowfish background layout */
+
+/*
+The theme homepage header does not expose a custom hook here, so these selectors
+intentionally target the existing Blowfish structure. It gets messy.
+*/
+body main article.max-w-full.prose.dark\:prose-invert
+  .relative.px-1.py-1.flex.flex-col.items-center.justify-center.text-center {
+  padding-top: 0.35rem;
+}
+
+body main article.max-w-full.prose.dark\:prose-invert
+  .relative.px-1.py-1.flex.flex-col.items-center.justify-center.text-center
+  > img.mb-2.rounded-full.h-36.w-36 {
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 0.7rem;
+}
+
+body main article.max-w-full.prose.dark\:prose-invert
+  .relative.px-1.py-1.flex.flex-col.items-center.justify-center.text-center
+  > .mt-3.mb-10.text-2xl {
+  margin-top: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+body main article.max-w-full.prose.dark\:prose-invert
+  .relative.px-1.py-1.flex.flex-col.items-center.justify-center.text-center
+  > h2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+  padding: 0.34rem 0.8rem;
+  border: 1px solid rgba(var(--color-neutral-300), 0.45);
+  border-radius: 999px;
+  background-color: rgba(var(--color-neutral-50), 0.22);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(var(--color-neutral-900), 0.78);
+  box-shadow: 0 14px 24px -22px rgba(0, 0, 0, 0.9);
+}
+
+.dark body main article.max-w-full.prose.dark\:prose-invert
+  .relative.px-1.py-1.flex.flex-col.items-center.justify-center.text-center
+  > h2 {
+  border-color: rgba(var(--color-neutral-500), 0.7);
+  background-color: rgba(var(--color-neutral-700), 0.55);
+  color: rgba(var(--color-neutral), 0.8);
+}
+
+body main article.max-w-full.prose.dark\:prose-invert
+  .relative.px-1.py-1.flex.flex-col.items-center.justify-center.text-center
+  > section.prose {
+  width: min(980px, 100%);
+  max-width: 980px;
+  margin-top: 0;
+}
+
+.home-inline-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  margin-bottom: 1.1rem;
+}
+
+.home-inline-intro__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2.25rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.home-inline-intro__typeit {
+  margin: 0;
+  min-height: 1.2em;
+  font-size: clamp(1.35rem, 3vw, 2.25rem);
+  line-height: 1;
+  color: rgba(var(--color-primary-700), 0.95);
+}
+
+.dark .home-inline-intro__typeit {
+  color: rgba(var(--color-primary-300), 0.97);
+}
+
+.home-open-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.8fr);
+  gap: 2.25rem;
+  align-items: start;
+  margin-top: 0.9rem;
+  text-align: left;
+}
+
+.home-open-layout__main p,
+.home-open-layout__side p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.home-open-layout__main p + p {
+  margin-top: 1rem;
+}
+
+.home-open-layout__side {
+  padding-left: 1.4rem;
+  border-left: 1px solid rgba(var(--color-neutral-300), 0.45);
+}
+
+.dark .home-open-layout__side {
+  border-left-color: rgba(var(--color-neutral-500), 0.65);
+}
+
+.home-open-layout__label {
+  margin-bottom: 0.55rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(var(--color-primary-700), 0.9);
+}
+
+.dark .home-open-layout__label {
+  color: rgba(var(--color-primary-300), 0.95);
+}
+
+.home-skill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 1.4rem 0 0;
+}
+
+.home-skill-strip span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--color-primary-500), 0.28);
+  background-color: rgba(var(--color-primary-100), 0.12);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dark .home-skill-strip span {
+  border-color: rgba(var(--color-primary-400), 0.38);
+  background-color: rgba(var(--color-primary-900), 0.38);
+}
+
+.home-route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: left;
+}
+
+.home-route {
+  display: block;
+  position: relative;
+  --home-route-corner: 1rem;
+  overflow: visible;
+  padding: 0.95rem 1rem 1rem;
+  border: 1px solid rgba(var(--color-neutral-300), 0.45);
+  border-radius: 1rem;
+  background:
+    linear-gradient(160deg, rgba(var(--color-neutral-50), 0.3), rgba(var(--color-primary-100), 0.08)),
+    rgba(var(--color-neutral-100), 0.12);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 18px 30px -28px rgba(0, 0, 0, 0.8);
+  transition: transform 0.18s ease, color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dark .home-route {
+  border-color: rgba(var(--color-neutral-500), 0.65);
+  background:
+    linear-gradient(160deg, rgba(var(--color-neutral-700), 0.84), rgba(var(--color-primary-900), 0.24)),
+    rgba(var(--color-neutral-700), 0.68);
+}
+
+.home-route:hover {
+  transform: translateY(-2px);
+  color: rgba(var(--color-primary-700), 0.95);
+  border-color: rgba(var(--color-primary-500), 0.5);
+  box-shadow: 0 22px 34px -28px rgba(0, 0, 0, 0.95);
+}
+
+.dark .home-route:hover {
+  color: rgba(var(--color-primary-300), 0.97);
+}
+
+/*
+The spark is a single dot that travels a rounded inset path around each card.
+Timing is intentionally staggered per button so the loop passes from one CTA to the next.
+*/
+.home-route::before {
+  content: "";
+  position: absolute;
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: rgba(var(--color-primary-100), 1);
+  opacity: 0;
+  transform: scale(0.8);
+  offset-path: inset(0 round var(--home-route-corner));
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  offset-anchor: center;
+  box-shadow:
+    0 0 0 1px rgba(var(--color-primary-400), 0.35),
+    0 0 8px rgba(var(--color-primary-300), 0.95),
+    0 0 16px rgba(var(--color-primary-400), 0.58);
+  pointer-events: none;
+  animation: home-route-spark 13.3s linear infinite;
+}
+
+.dark .home-route::before {
+  background: rgba(var(--color-primary-100), 1);
+  box-shadow:
+    0 0 0 1px rgba(var(--color-primary-300), 0.42),
+    0 0 10px rgba(var(--color-primary-300), 0.98),
+    0 0 18px rgba(var(--color-primary-400), 0.62);
+}
+
+.home-route:nth-child(2)::before {
+  animation-delay: 4.0s;
+}
+
+.home-route:nth-child(3)::before {
+  animation-delay: 8.0s;
+}
+
+/* Keep the shared animation clock running; just (kinda ;) ) hide the spark while hovered. */
+.home-route:hover::before {
+  opacity: 0.03 !important;
+}
+
+.home-route span {
+  display: block;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.home-route small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(var(--color-neutral-900), 0.68);
+}
+
+.dark .home-route small {
+  color: rgba(var(--color-neutral), 0.64);
+}
+
+@keyframes home-route-spark {
+  0%,
+  100% {
+    opacity: 0;
+    offset-distance: 0%;
+    transform: scale(0.8);
+  }
+
+  4% {
+    opacity: 1;
+    offset-distance: 0%;
+    transform: scale(1);
+  }
+
+  28% {
+    opacity: 0.5;
+    offset-distance: 100%;
+    transform: scale(1);
+  }
+
+  32% {
+    opacity: 0;
+    offset-distance: 100%;
+    transform: scale(1);
+  }
+
+  36% {
+    opacity: 0;
+    offset-distance: 100%;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-inline-intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-open-layout,
+  .home-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-open-layout {
+    gap: 1.2rem;
+  }
+
+  .home-open-layout__side {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .home-route-grid {
+    gap: 1rem;
   }
 }
