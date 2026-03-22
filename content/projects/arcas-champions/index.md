@@ -4,9 +4,10 @@ description: "A multiplayer UE5 project where I worked across AI, gameplay syste
 summary: "Professional multiplayer game work spanning AI bots, gameplay systems, level design support, and custom UBT/UAT build workflows in Unreal Engine 5."
 draft: false
 weight: 10
+projectSeries: "Professional"
 categories: ["Professional"]
 tags: ["Unreal Engine 5", "C++", "AI", "Multiplayer", "Build Pipelines", "Level Design", "Steamworks"]
-series: ["Portfolio"]
+series: ["Professional"]
 series_order: 1
 date: 2025-11-01
 ---
@@ -121,4 +122,3 @@ Arcas Champions is the strongest example in my portfolio of how I operate in pro
 - I can work close to game feel without losing engineering discipline.
 - I can build systems that remain editable by designers.
 - I can move from feature work, to creative work, into technical operations when a project needs stability more than novelty.
-

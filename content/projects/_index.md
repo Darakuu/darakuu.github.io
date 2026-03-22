@@ -3,10 +3,11 @@ title: "Projects"
 description: "A curated set of professional, community, and personal project articles."
 draft: false
 cardView: true
-groupByYear: true
+groupByYear: false
 orderByWeight: false
 showTableOfContents: false
 showZenMode: false
+projectSeriesOrder: ["Professional", "Personal", "Academic"]
 
 cascade:
   showDate: true
@@ -25,5 +26,5 @@ cascade:
 
 
 {{< lead >}}
-My most noteworthy projects, from professional to personal.
+My most noteworthy projects, grouped by professional, personal, and academic work.
 {{< /lead >}}

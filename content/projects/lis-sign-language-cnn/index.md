@@ -4,9 +4,10 @@ description: "A machine learning project built around CNN-based recognition of t
 summary: "A machine learning project focused on LIS alphabet recognition through custom and AlexNet-based CNNs, dataset work, and data acquisition tooling."
 draft: false
 weight: 40
-categories: ["Academic", "Personal"]
+projectSeries: "Academic"
+categories: ["Academic"]
 tags: ["Python", "PyTorch", "Computer Vision", "CNN", "OpenCV", "Torchvision", "TensorBoard"]
-series: ["University Projects"]
+series: ["Academic"]
 series_order: 1
 date: 2024-07-25
 ---

@@ -4,9 +4,10 @@ description: "A complete custom Black Mesa level built from graybox to final pla
 summary: "A full custom Black Mesa map built from layout and grayboxing through visual polish, engine-specific feature work, and final release."
 draft: false
 weight: 30
+projectSeries: "Personal"
 categories: ["Personal"]
 tags: ["Black Mesa", "Source Engine", "Level Design", "Hammer", "Modding", "Encounter Design"]
-series: ["Portfolio"]
+series: ["Personal"]
 series_order: 3
 date: 2021-07-23
 ---

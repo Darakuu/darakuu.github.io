@@ -4,7 +4,8 @@ description: "Volunteer localization and proofreading work for Black Mesa with r
 summary: "Volunteer community work on Black Mesa focused on Italian localization, proofreading, terminology consistency, and release-quality text review."
 draft: false
 weight: 20
-categories: ["Community"]
+projectSeries: "Personal"
+categories: ["Personal"]
 tags: ["Black Mesa", "Localization", "Proofreading", "Translation", "QA", "Crowdin"]
 series: ["Portfolio"]
 series_order: 2

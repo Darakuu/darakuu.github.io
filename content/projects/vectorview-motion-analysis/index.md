@@ -4,9 +4,10 @@ description: "A multimedia and computer-vision project for video motion fields a
 summary: "A Python desktop application for motion estimation and ROI tracking, combining video-analysis algorithms with a PyQt5 interface."
 draft: false
 weight: 50
-categories: ["Academic", "Personal"]
+projectSeries: "Academic"
+categories: ["Academic"]
 tags: ["Python", "OpenCV", "PyQt5", "Computer Vision", "Tracking", "Video Processing", "NumPy"]
-series: ["University Projects"]
+series: ["Academic"]
 series_order: 5
 date: 2024-06-07
 ---
