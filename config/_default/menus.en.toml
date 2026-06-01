@@ -23,16 +23,22 @@
   weight = 20
 
 [[main]]
+  name = "Notes"
+  pre = "pencil"
+  url = "https://darakuu.github.io/notes/"
+  weight = 30
+
+[[main]]
   name = "About Me"
   pre = "heart"
   pageRef = "aboutme"
-  weight = 30
+  weight = 40
 
 [[main]]
   name = "Contact"
   pre = "envelope"
   pageRef = "contact"
-  weight = 40
+  weight = 50
 
 #[[main]]
 #  name = "example sub-menu 1"
