@@ -45,14 +45,14 @@ Level Designer
 <nav class="home-route-grid">
   <a class="home-route" href="/projects">
     <span>Projects</span>
-    <small>See the actual work</small>
+    <small>See my work</small>
   </a>
   <a class="home-route" href="/resume">
     <span>Resume</span>
-    <small>Read the full timeline</small>
+    <small>My experience, summed up</small>
   </a>
   <a class="home-route" href="/aboutme">
     <span>About Me</span>
-    <small>Get the human version</small>
+    <small>Cat pictures inside!</small>
   </a>
 </nav>
