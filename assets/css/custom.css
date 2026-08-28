@@ -1105,3 +1105,15 @@ Timing is intentionally staggered per button so the loop passes from one CTA to 
     grid-template-columns: 1fr;
   }
 }
+
+/* Use the available reading width on single-article pages. */
+#single_header,
+.article-content.max-w-prose,
+article > footer.max-w-prose {
+  max-width: 100%;
+}
+
+article > section.flex.max-w-full > div.min-w-0.min-h-0.max-w-fit {
+  flex: 1 1 0%;
+  max-width: none;
+}
