@@ -8,7 +8,7 @@ projectSeries: "Academic"
 categories: ["Academic"]
 tags: ["Python", "OpenCV", "PyQt5", "Computer Vision", "Tracking", "Video Processing", "NumPy"]
 series: ["Academic"]
-series_order: 5
+series_order: 2
 date: 2024-06-07
 ---
 

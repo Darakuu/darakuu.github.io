@@ -8,7 +8,7 @@ projectSeries: "Personal"
 categories: ["Personal"]
 tags: ["Black Mesa", "Localization", "Proofreading", "Translation", "QA", "Crowdin"]
 series: ["Portfolio"]
-series_order: 2
+series_order: 1
 date: 2021-01-01
 ---
 

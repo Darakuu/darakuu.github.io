@@ -8,7 +8,7 @@ projectSeries: "Personal"
 categories: ["Personal"]
 tags: ["Black Mesa", "Source Engine", "Level Design", "Hammer", "Modding", "Encounter Design"]
 series: ["Personal"]
-series_order: 3
+series_order: 2
 date: 2021-07-23
 ---
 

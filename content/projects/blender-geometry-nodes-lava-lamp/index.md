@@ -2,13 +2,13 @@
 title: "Lava Lamp Made with Blender Geometry Nodes"
 description: "A procedural 3D lava lamp built with Blender Geometry Nodes for an advanced computer graphics course."
 summary: "An advanced computer graphics course project exploring procedural lava-lamp animation with Blender Geometry Nodes, using SDF."
-draft: true
+draft: false
 weight: 60
 projectSeries: "Academic"
 categories: ["Academic"]
 tags: ["Blender", "Geometry Nodes", "Procedural Modeling", "Computer Graphics", "3D Animation", "SDF"]
 series: ["Academic"]
-series_order: 2
+series_order: 3
 date: 2026-06-08
 ---
 {{< katex >}}
