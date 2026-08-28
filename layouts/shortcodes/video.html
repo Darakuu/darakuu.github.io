@@ -1,21 +1,55 @@
-{{ $src := .Get "src" }}
-{{ $caption := .Get "caption" }}
+{{- $src := .Get "src" -}}
+{{- $caption := .Get "caption" -}}
 
-{{ $src = strings.TrimPrefix "/" $src }}
+{{- if not $src -}}
+    {{- errorf "video shortcode: src is required: %s" .Position -}}
+{{- end -}}
 
-{{ $video := .Page.Resources.GetMatch $src }}
+{{- $src = strings.TrimPrefix "/" $src -}}
 
-{{ if not $video }}
-    {{ $video = resources.Get $src }}
-{{ end }}
+{{/* Try page bundle resources first, then assets/ */}}
+{{- $video := .Page.Resources.GetMatch $src -}}
 
-{{ if $video }}
+{{- if not $video -}}
+    {{- $video = resources.Get $src -}}
+{{- end -}}
+
+{{- if not $video -}}
+    {{- errorf "Video resource %q not found: %s" $src .Position -}}
+{{- end -}}
+
+{{/* Boolean options */}}
+{{- $truthy := slice "true" "1" "yes" "on" -}}
+
+{{- $autoplay := false -}}
+{{- if isset .Params "autoplay" -}}
+    {{- $autoplay = in $truthy (lower (printf "%v" (.Get "autoplay"))) -}}
+{{- end -}}
+
+{{- $loop := false -}}
+{{- if isset .Params "loop" -}}
+    {{- $loop = in $truthy (lower (printf "%v" (.Get "loop"))) -}}
+{{- end -}}
+
+{{- $muted := false -}}
+{{- if isset .Params "muted" -}}
+    {{- $muted = in $truthy (lower (printf "%v" (.Get "muted"))) -}}
+{{- end -}}
+
+{{- $controls := true -}}
+{{- if isset .Params "controls" -}}
+    {{- $controls = in $truthy (lower (printf "%v" (.Get "controls"))) -}}
+{{- end -}}
+
 <figure>
     <video
-        controls
         preload="metadata"
         playsinline
         style="width: 100%; height: auto;"
+        {{- if $autoplay }} autoplay{{ end -}}
+        {{- if $loop }} loop{{ end -}}
+        {{- if $muted }} muted{{ end -}}
+        {{- if $controls }} controls{{ end -}}
     >
         <source
             src="{{ $video.RelPermalink }}"
@@ -24,10 +58,7 @@
         Your browser does not support the video tag.
     </video>
 
-    {{ with $caption }}
+    {{- with $caption }}
         <figcaption>{{ . | markdownify }}</figcaption>
-    {{ end }}
+    {{- end }}
 </figure>
-{{ else }}
-    {{ errorf "Video resource %q not found: %s" $src .Position }}
-{{ end }}
