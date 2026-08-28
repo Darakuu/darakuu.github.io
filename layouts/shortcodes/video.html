@@ -1,0 +1,33 @@
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+
+{{ $src = strings.TrimPrefix "/" $src }}
+
+{{ $video := .Page.Resources.GetMatch $src }}
+
+{{ if not $video }}
+    {{ $video = resources.Get $src }}
+{{ end }}
+
+{{ if $video }}
+<figure>
+    <video
+        controls
+        preload="metadata"
+        playsinline
+        style="width: 100%; height: auto;"
+    >
+        <source
+            src="{{ $video.RelPermalink }}"
+            type="{{ $video.MediaType.Type }}"
+        >
+        Your browser does not support the video tag.
+    </video>
+
+    {{ with $caption }}
+        <figcaption>{{ . | markdownify }}</figcaption>
+    {{ end }}
+</figure>
+{{ else }}
+    {{ errorf "Video resource %q not found: %s" $src .Position }}
+{{ end }}
