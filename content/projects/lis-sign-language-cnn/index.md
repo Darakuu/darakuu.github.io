@@ -5,6 +5,7 @@ summary: "A machine learning project focused on LIS alphabet recognition through
 draft: false
 weight: 40
 projectSeries: "Academic"
+projectField: "Programming"
 categories: ["Academic"]
 tags: ["Python", "PyTorch", "Computer Vision", "CNN", "OpenCV", "Torchvision", "TensorBoard"]
 series: ["Academic"]

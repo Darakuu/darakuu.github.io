@@ -5,6 +5,7 @@ summary: "Professional multiplayer game work spanning AI bots, gameplay systems,
 draft: false
 weight: 10
 projectSeries: "Professional"
+projectField: "Programming"
 categories: ["Professional"]
 tags: ["Unreal Engine 5", "C++", "AI", "Multiplayer", "Build Pipelines", "Level Design", "Steamworks"]
 series: ["Professional"]

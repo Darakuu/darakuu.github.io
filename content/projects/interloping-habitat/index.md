@@ -5,6 +5,7 @@ summary: "A full custom Black Mesa map built from layout and grayboxing through 
 draft: false
 weight: 30
 projectSeries: "Personal"
+projectField: "Level Design"
 categories: ["Personal"]
 tags: ["Black Mesa", "Source Engine", "Level Design", "Hammer", "Modding", "Encounter Design"]
 series: ["Personal"]

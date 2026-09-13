@@ -5,6 +5,7 @@ summary: "An advanced computer graphics course project exploring procedural lava
 draft: false
 weight: 60
 projectSeries: "Academic"
+projectField: "Computer Graphics"
 categories: ["Academic"]
 tags: ["Blender", "Geometry Nodes", "Procedural Modeling", "Computer Graphics", "3D Animation", "SDF"]
 series: ["Academic"]

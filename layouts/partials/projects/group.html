@@ -1,0 +1,11 @@
+{{- $pages := .pages -}}
+{{- if gt (len $pages) 0 -}}
+<section class="mt-12 projects-group">
+  <h2 class="mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">{{ .title }}</h2>
+  <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    {{ range $pages }}
+      {{ partial "article-link/card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{- end -}}

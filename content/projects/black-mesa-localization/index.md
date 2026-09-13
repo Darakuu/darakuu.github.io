@@ -5,6 +5,7 @@ summary: "Volunteer community work on Black Mesa focused on Italian localization
 draft: false
 weight: 20
 projectSeries: "Personal"
+projectField: "Miscellaneous"
 categories: ["Personal"]
 tags: ["Black Mesa", "Localization", "Proofreading", "Translation", "QA", "Crowdin"]
 series: ["Portfolio"]

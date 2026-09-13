@@ -46,37 +46,103 @@
 </section>
 
 {{ $pages := .RegularPages.ByDate.Reverse }}
-{{ $projectSeriesOrder := .Params.projectSeriesOrder | default (slice "Professional" "Personal" "Academic") }}
+{{ $projectSeriesOrder := .Params.projectSeriesOrder | default (slice "Professional" "Academic" "Personal") }}
+{{ $projectFieldOrder := .Params.projectFieldOrder | default (slice "Programming" "Level Design" "Computer Graphics") }}
 
 {{ if gt (len $pages) 0 }}
-  {{ range $projectSeriesOrder }}
-    {{ $projectSeries := . }}
-    {{ $projectSeriesPages := where $pages "Params.projectSeries" $projectSeries }}
-    {{ if gt (len $projectSeriesPages) 0 }}
-    <section class="mt-12">
-      <h2 class="mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">{{ $projectSeries }}</h2>
-      <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {{ range $projectSeriesPages }}
-        {{ partial "article-link/card.html" . }}
-        {{ end }}
-      </div>
-    </section>
+  {{/*
+    Type and field are intentionally scalar metadata. Failing the build on a
+    list catches accidental YAML arrays before an article can appear in two
+    groups of the same filter.
+  */}}
+  {{ range $pages }}
+    {{ $projectPage := . }}
+    {{ $projectType := .Params.projectSeries }}
+    {{ if not $projectType }}
+      {{ errorf "%s must define one projectSeries value" .File.Path }}
+    {{ else if ne (printf "%T" $projectType) "string" }}
+      {{ errorf "%s: projectSeries must be one string, not %T" .File.Path $projectType }}
+    {{ else if eq (strings.TrimSpace $projectType) "" }}
+      {{ errorf "%s: projectSeries must not be empty" .File.Path }}
+    {{ end }}
+
+    {{ if isset .Params "projectfield" }}
+      {{ $projectField := .Params.projectField }}
+      {{ if ne (printf "%T" $projectField) "string" }}
+        {{ errorf "%s: projectField must be one string, not %T" $projectPage.File.Path $projectField }}
+      {{ else if eq (strings.TrimSpace $projectField) "" }}
+        {{ errorf "%s: projectField must not be empty" $projectPage.File.Path }}
+      {{ end }}
     {{ end }}
   {{ end }}
 
-  {{ $remainingPages := where $pages "Params.projectSeries" "not in" $projectSeriesOrder }}
-  {{ range $remainingPages.GroupByParam "projectSeries" }}
-    {{ if gt (len .Pages) 0 }}
-    <section class="mt-12">
-      <h2 class="mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">{{ .Key }}</h2>
-      <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {{ range .Pages.ByDate.Reverse }}
-        {{ partial "article-link/card.html" . }}
-        {{ end }}
-      </div>
-    </section>
+  <nav class="projects-filter" aria-label="Group projects">
+    <span class="projects-filter__label">Group by</span>
+    <div class="projects-filter__controls">
+      <button id="projects-filter-type" class="projects-filter__button is-active" type="button" data-projects-filter-button="type" aria-controls="projects-view-type" aria-pressed="true">Type</button>
+      <button id="projects-filter-year" class="projects-filter__button" type="button" data-projects-filter-button="year" aria-controls="projects-view-year" aria-pressed="false">Year</button>
+      <button id="projects-filter-field" class="projects-filter__button" type="button" data-projects-filter-button="field" aria-controls="projects-view-field" aria-pressed="false">Category</button>
+    </div>
+  </nav>
+
+  <div id="projects-view-type" class="projects-view" data-projects-view="type" role="region" aria-labelledby="projects-filter-type">
+    {{ range $projectSeriesOrder }}
+      {{ $projectSeries := . }}
+      {{ $projectSeriesPages := where $pages "Params.projectSeries" $projectSeries }}
+      {{ partial "projects/group.html" (dict "title" $projectSeries "pages" $projectSeriesPages) }}
     {{ end }}
-  {{ end }}
+
+    {{ $remainingPages := where $pages "Params.projectSeries" "not in" $projectSeriesOrder }}
+    {{ range $remainingPages.GroupByParam "projectSeries" }}
+      {{ partial "projects/group.html" (dict "title" .Key "pages" .Pages.ByDate.Reverse) }}
+    {{ end }}
+  </div>
+
+  <div id="projects-view-year" class="projects-view" data-projects-view="year" role="region" aria-labelledby="projects-filter-year" hidden>
+    {{ range $pages.GroupByDate "2006" }}
+      {{ partial "projects/group.html" (dict "title" .Key "pages" .Pages.ByDate.Reverse) }}
+    {{ end }}
+  </div>
+
+  <div id="projects-view-field" class="projects-view" data-projects-view="field" role="region" aria-labelledby="projects-filter-field" hidden>
+    {{ $categorizedPages := where $pages "Params.projectField" "ne" nil }}
+    {{ range $projectFieldOrder }}
+      {{ $projectField := . }}
+      {{ $projectFieldPages := where $categorizedPages "Params.projectField" $projectField }}
+      {{ partial "projects/group.html" (dict "title" $projectField "pages" $projectFieldPages) }}
+    {{ end }}
+
+    {{ $remainingFieldPages := where $categorizedPages "Params.projectField" "not in" $projectFieldOrder }}
+    {{ range $remainingFieldPages.GroupByParam "projectField" }}
+      {{ partial "projects/group.html" (dict "title" .Key "pages" .Pages.ByDate.Reverse) }}
+    {{ end }}
+
+    {{ $uncategorizedPages := where $pages "Params.projectField" "eq" nil }}
+    {{ partial "projects/group.html" (dict "title" "Uncategorized" "pages" $uncategorizedPages) }}
+  </div>
+
+  <script>
+    (() => {
+      const buttons = Array.from(document.querySelectorAll("[data-projects-filter-button]"));
+      const views = Array.from(document.querySelectorAll("[data-projects-view]"));
+
+      const selectView = (selectedView) => {
+        buttons.forEach((button) => {
+          const isSelected = button.dataset.projectsFilterButton === selectedView;
+          button.classList.toggle("is-active", isSelected);
+          button.setAttribute("aria-pressed", String(isSelected));
+        });
+
+        views.forEach((view) => {
+          view.hidden = view.dataset.projectsView !== selectedView;
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => selectView(button.dataset.projectsFilterButton));
+      });
+    })();
+  </script>
 {{ else }}
   <section class="mt-10 prose dark:prose-invert">
     <p class="py-8 border-t">

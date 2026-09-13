@@ -5,6 +5,7 @@ summary: "A Python desktop application for motion estimation and ROI tracking, c
 draft: false
 weight: 50
 projectSeries: "Academic"
+projectField: "Programming"
 categories: ["Academic"]
 tags: ["Python", "OpenCV", "PyQt5", "Computer Vision", "Tracking", "Video Processing", "NumPy"]
 series: ["Academic"]

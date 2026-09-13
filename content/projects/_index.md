@@ -7,7 +7,8 @@ groupByYear: false
 orderByWeight: false
 showTableOfContents: false
 showZenMode: false
-projectSeriesOrder: ["Professional", "Personal", "Academic"]
+projectSeriesOrder: ["Professional", "Academic", "Personal"]
+projectFieldOrder: ["Programming", "Level Design", "Computer Graphics"]
 
 cascade:
   showDate: true
@@ -26,5 +27,5 @@ cascade:
 
 
 {{< lead >}}
-My most noteworthy projects, grouped by professional, personal, and academic work.
+My most noteworthy projects, grouped by type, year, or field.
 {{< /lead >}}
