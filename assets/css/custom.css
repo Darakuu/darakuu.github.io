@@ -1041,6 +1041,15 @@ Timing is intentionally staggered per button so the loop passes from one CTA to 
   display: none;
 }
 
+/* Keep the wide BC7 banner fully visible inside the taller project card. */
+a[href$="/projects/bc7-compression-ue5/"] .thumbnail_card {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  background-color: #171b38;
+  background-origin: content-box;
+  background-size: contain;
+}
+
 .projects-hub {
   display: grid;
   gap: 1.4rem;

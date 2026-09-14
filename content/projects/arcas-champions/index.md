@@ -71,10 +71,8 @@ That meant building behavior in a way that supported iteration by design and gam
 - enough flexibility in Blueprint-facing hooks to keep designers unblocked
 - behavior that stayed compatible with multiplayer and authoritative game flow
 
-A more detailed, technical write-up of how I implemented the custom systems required are on Bevium's website,
-in an another article written by me, here: [Arcas AI on Bevium.it](https://bevium.it/blog/2025-11-03-arcasai-implementation-retrospective).
-
-(Should the website ever die, please notify me)
+A more detailed technical write-up of the custom systems I implemented is available in
+[ArcasAI - Implementation Retrospect](/projects/arcasai-implementation-retrospective/).
 
 ### Gameplay systems
 
@@ -99,6 +97,12 @@ helped reduce that gap.
 
 I personally enjoyed working on the game's level design as I was working on the AI bots: it really made me
 appreciate how they would slowly come to life as they learned to use their environment.
+
+Here are some Level Design Reels, for your viewing pleasure:
+
+{{< youtubeLite id="AEgKCqZBWrQ" label="BAS Beach Club" >}}
+{{< youtubeLite id="ODIjmGB_QYc" label="Ship Crash Site" >}}
+
 
 ## Pipeline and Production Work
 

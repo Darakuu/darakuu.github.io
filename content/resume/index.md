@@ -9,12 +9,13 @@ draft: false
 
 <div class="resume-page">
   <section class="resume-intro-card">
-    <p class="resume-kicker">C++ Gameplay Programmer - Unreal Engine 5</p>
+    <p class="resume-kicker">Computer Scientist | Software Engineer | Game Developer</p>
     <h2>Professional Snapshot</h2>
     <p>
-      I am a C++ Unreal Engine 5 Gameplay Programmer with a fairly generalist approach to Game Development.
-      Most of my professional work has been on multiplayer projects, especially AI, gameplay systems,
-      and server-authoritative code.
+      I have spent years working across the parts of game development I enjoy most: C++ gameplay, AI,
+      multiplayer systems, level design, and, more recently, multiplatform DevOps. I am a generalist at heart,
+      with production experience that now stretches from server-authoritative Unreal Engine 5 systems to the
+      pipelines behind a PC and console release.
     </p>
     <div class="resume-cta-group">
       <a class="resume-cta resume-cta-primary" href="resources/CV_ElvioSantangelo.pdf">Download CV (PDF)</a>
@@ -25,15 +26,24 @@ draft: false
   <section class="resume-highlight-grid">
     <article class="resume-highlight-item">
       <h3>Most Recent Role</h3>
-      <p>Gameplay Programmer at Bevium until November 2025, where I worked on AI agents, gameplay systems in C++ and Blueprints, and part of the level design work.</p>
+      <p>DevOps Engineer at Stormind Games since June 2026. <br> I work hands-on with Unreal Engine 5 CI/CD and am directly responsible for managing the pipelines for <em>Remothered: Red Nun's Legacy</em> across every launch platform: PC, PlayStation 5, Xbox Series X|S, and Nintendo Switch 2.</p>
     </article>
     <article class="resume-highlight-item">
       <h3>Core Stack</h3>
-      <p>Unreal Engine 5, C++, C#, AI behavior trees, replication, RPCs, Steamworks, and custom build workflows with UBT and UAT.</p>
+      <p>
+        <strong>Shipping platforms: PC, PlayStation 5, Xbox Series X|S, and Nintendo Switch 2.</strong><br>
+        --- <br>
+        <strong>Build & DevOps:</strong> cross-platform CI/CD, Jenkins, build and release automation, UBT/UAT, cooking, packaging and publishing workflows, Git/Git LFS, Docker, Linux, Python, Bash, Batch, and command-line tooling.<br>
+        --- <br>
+        <strong>Game development:</strong> Unreal Engine 5, C++, C#, Blueprints, Gameplay Ability System (GAS), AI Behavior Trees and EQS, replication, RPCs, dedicated servers, and Steamworks.
+      </p>
     </article>
     <article class="resume-highlight-item">
-      <h3>Key Strength</h3>
-      <p>I work well as a generalist: I can move between AI, gameplay code, level design, build workflows, and team coordination depending on what the project needs.</p>
+      <h3>Key Strengths</h3>
+      <p>I am a generalist at heart, and I genuinely enjoy moving wherever a project needs me most. <br>
+      One day that can mean working deep in AI or gameplay code, and the next, untangling a broken build pipeline, helping with level design, or organizing work with the rest of the team. <br>
+      I tend to take ownership of messy problems, keep digging until I understand what is actually going wrong, and find the solution.<br>
+      I also care about communicating clearly, especially when a problem sits between programmers, designers, production, and platform requirements.</p>
     </article>
   </section>
 </div>
@@ -41,6 +51,24 @@ draft: false
 # Timeline
 
 {{< timeline >}}
+
+{{< timelineItem icon="code" header="Stormind Games - DevOps Engineer" badge="Jun 2026 - Present" subheader="Catania, Hybrid" >}}
+<ul>
+    <li> Work hands-on with Unreal Engine 5 build and release infrastructure, owning CI/CD reliability from daily development builds through release-ready artifacts.
+    <li> Directly manage the build, packaging, and publishing pipelines for every platform on which <em>Remothered: Red Nun's Legacy</em> is launching: PC, PlayStation 5, Xbox Series X|S, and Nintendo Switch 2.
+    <li> Build and maintain Jenkins automation, platform-specific workflows, build notifications, and supporting command-line tooling.
+    <li> Investigate build failures with programmers and production teams, then turn recurring problems into reliable automated workflows.
+</ul>
+{{< keywordList >}}
+{{< keyword icon="ue5" >}} Unreal Engine 5 {{< /keyword >}}
+{{< keyword >}} DevOps {{< /keyword >}}
+{{< keyword >}} CI/CD {{< /keyword >}}
+{{< keyword >}} Jenkins {{< /keyword >}}
+{{< keyword >}} Cross-platform Pipelines {{< /keyword >}}
+{{< keyword >}} Build Automation {{< /keyword >}}
+{{< /keywordList >}}
+{{< /timelineItem >}}
+
 
 {{< timelineItem icon="code" header="Bevium - C++ Gameplay Programmer" badge="Feb 2024 - Nov 2025" subheader="Full Remote" >}}
 <ul>

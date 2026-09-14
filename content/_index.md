@@ -8,6 +8,9 @@ description: "Portfolio homepage for Elvio Santangelo, C++ Unreal Engine gamepla
 Game Developer
 Software Engineer
 Level Designer
+DevOps Engineer
+Graphics Programmer
+all around a swell guy
 {{< /typeit >}}
 </div>
 
@@ -15,21 +18,19 @@ Level Designer
   <div class="home-open-layout__main">
   <p class="home-open-layout__label">Professional Experience</p>
     <p>
-      I am a C++ Unreal Engine 5 Gameplay Programmer. My most recent professional role was at Bevium,
-      where I worked until November 2025 on multiplayer projects.
+      I am a C++ Unreal Engine 5 Gameplay Programmer, and software engineer. My current professional role is at Stormind Games, as a DevOps Engineer with a focus on UE5 systems. Previously, I worked at Bevium, where I worked on UE5 multiplayer projects.
     </p>
     <p>
-      Most of my work has been around AI, gameplay systems, replication, build workflows with UBT/UAT,
-      and some level design when needed. I hold a Bachelor's degree in Computer Science and I am currently
-      pursuing a Master's degree in Computer Science.
+      Most of my work has been around AI, gameplay systems, replication, build workflows with UBT/UAT,and level design when needed. 
+      I hold a Bachelor's degree in Computer Science and I am currently
+      wrapping up a Master's degree in Computer Science, working on my thesis.
     </p>
   </div>
   <div class="home-open-layout__side">
-    <p class="home-open-layout__label">Outside work</p>
+    <p class="home-open-layout__label">Game Dev Passion</p>
     <p>
-      I have also been modding Source Engine games for well over a decade, especially Half-Life 2,
-      Garry's Mod, and Black Mesa. My favorite part has always been building maps and playable spaces
-      from scratch.
+      I have also been modding Source Engine games for well over a decade, especially Half-Life 2, Garry's Mod, and Black Mesa.
+      I have always wanted to create experiences, and whenever I have the time, modding gives me an even more powerful outlet for my creative energy to shine.
     </p>
   </div>
 </div>
@@ -39,6 +40,9 @@ Level Designer
   <span>Unreal Engine 5</span>
   <span>Multiplayer</span>
   <span>AI</span>
+  <span>DevOps</span>
+  <span>Software Engineering</span>
+  <span>Computer Graphics</span>
   <span>Level Design</span>
 </div>
 
