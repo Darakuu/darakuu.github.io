@@ -1,7 +1,7 @@
 ---
 title: "Interloping Habitat"
-description: "A complete custom Black Mesa level built from graybox to final playable release."
-summary: "A full custom Black Mesa map built from layout and grayboxing through visual polish, engine-specific feature work, and final release."
+description: "A two-level Black Mesa campaign consumed by an invasive Xenian biomass, with my work covering the introduction and The Marsh."
+summary: "A collaborative Black Mesa release in which I built the opening and The Marsh, from early layout and encounter flow through final visual polish."
 draft: false
 weight: 30
 projectSeries: "Personal"
@@ -14,26 +14,30 @@ date: 2021-07-23
 ---
 
 {{< lead >}}
-A full custom level for Black Mesa, built from first layout pass to final polish as a complete playable mod.
+Welcome to the Habitat. A distant corner of Black Mesa is being eaten alive and rebuilt into something considerably more Xenian.
 {{< /lead >}}
+
+![A Black Mesa tram overlooking a facility overtaken by Xenian biomass](screenshot0.jpg)
+
+*The opening I built for the campaign: one last tram ride before Gordon is dropped directly into the problem.*
 
 {{< youtubeLite id="1TrqKIDjkzg" label="Interloping Habitat trailer" >}}
 
 <div class="project-brief">
   <article>
     <span>Type</span>
-    <strong>Personal level design project</strong>
-    <p>A complete map release in collaboration with a dear riend.</p>
+    <strong>Collaborative single-player campaign</strong>
+    <p>Two large Black Mesa levels built with my dear friend Kafe, of Splash Damage fame.</p>
   </article>
   <article>
-    <span>Focus</span>
-    <strong>Level design and implementation</strong>
-    <p>Flow, space building, encounter pacing, and final map production.</p>
+    <span>My work</span>
+    <strong>Introduction and The Marsh</strong>
+    <p>Layout, encounter pacing, underwater traversal, environment work, and final implementation.</p>
   </article>
   <article>
     <span>Stack</span>
     <strong>Source Engine, Hammer, Black Mesa</strong>
-    <p>Working with a dated, yet proven program.</p>
+    <p>Working with a dated, yet proven and amazing editor and the then-new Black Mesa Xen toolset.</p>
   </article>
 </div>
 
@@ -44,51 +48,52 @@ A full custom level for Black Mesa, built from first layout pass to final polish
 {{< keyword >}} Miro {{< /keyword >}}
 {{< /keywordList >}}
 
-## Project Scope
+## Welcome to the Habitat
 
-Interloping Habitat was a full map project, in collaboration with a friend, using the new features added in
-the Black Mesa Xen update to their full potential.
+With the Resonance Cascade in full effect, an unknown biomass has broken into a distant sector of Black Mesa. It does not simply infest the facility: it consumes it and grotesquely morphs what remains into a new Xenian habitat.
 
-The project covered the complete level-design loop:
+The resident science team had already assembled a way to stop it. Then the HECU arrived, massacred the people who understood the plan, and were left trying to reconstruct it from whatever remained. Gordon, naturally, walks straight into the middle of all this.
 
-- shaping the route and progression from the first blockout,
-- iterating on encounter rhythm and readability,
-- integrating the visual and technical passes needed to make the level feel finished.
+The campaign is split into two large levels. Kafe built *The Habitat*, taking the player through laboratories and enormous Xen enclosures toward the source of the infestation. I worked on the introduction shown above and built *The Marsh*, where the operation—and the biomass—finally comes to a head.
 
-## Design Process
+## The Marsh
 
-The graybox phase mattered because it established the entire experience. Before visual polish, the level had
-to work as movement space, combat space, and navigational space.
+![A huge Black Mesa enclosure transformed by red Xenian flora](screenshot1.jpg)
 
-That included asking practical questions such as:
+*The facility is still visible, but it is nearly fully consumed. I wanted the Xen growth to feel less like decoration and more like a new environment forcing itself through the old one. Taking inspiration from the Flood from Halo.*
 
-- where does the player pause and where do they push forward
-- how much information should the environment reveal at each point
-- how do combat beats and traversal beats alternate without exhausting the player
+The Marsh is the centre of the biomass: a wild, half-flooded Xenian ecosystem growing inside what remains of Black Mesa. The route alternates between larger combat spaces and tighter traversal, with industrial landmarks keeping the player oriented while the organic shapes do their best to ruin that plan.
 
-Building good spaces in the Source ecosystem is not just a matter of detail placement. The flow has to hold
-up even when the map is visually stripped down.
+![Towering concrete structures surrounded by crystals and Xenian growth](screenshot3.jpg)
 
-## Working Inside a Less-Documented Branch
+*The large enclosures let me push the scale much further than the opening while still using the surviving concrete architecture as a readable frame.*
 
-One of the interesting parts of this project was working with features in the Black Mesa engine branch that,
-at the time, were not especially well documented.
+## Yes, There Is an Underwater Section
 
-That changes the nature of the work. Instead of following a stable cookbook, you end up validating behavior,
-testing limits, and learning by direct iteration inside the editor and game runtime. It is slower than using
-a mature workflow, but it forces a better understanding of how the environment actually behaves.
+Because underwater sections have such an impeccable reputation in videogames, I obviously decided The Marsh needed one. I mostly liked the effects that the new godrays added to the game, and so I did my best to design a section that was quick, bearable, and full of little secrets.
 
-The new lighting system was especially esoteric: it mimiced the one present in Unreal Engine 4, but with its own
-Source-Engine feeling.
+![An underwater section right before The Marsh overtaken by Xenian flora](screenshot5.jpg)
 
-## What This Project Shows
+*The flooded route breaks up the combat and makes the infestation feel physically deeper than the visible surface. It also meant solving the usual underwater problems: direction, visibility, pacing, and convincing players that yes, they really do have to go down there.*
 
-Interloping Habitat is useful in this portfolio because it demonstrates two things clearly:
+Jokes aside, the section had to remain legible without losing the alien atmosphere. Light, colour, and recognizable facility geometry became much more important once normal movement and sightlines were taken away from the player.
 
-- I enjoy building playable spaces, not only systems.
-- I can take a project from abstract layout thinking to a finished deliverable.
+I also played around with some "pareidoliac" shapes, helped by the foggy water. And finally, I had an excuse to use the new underwater barnacles :)
 
-That combination matters to me. Even when I work primarily in gameplay programming, I prefer staying close to
-the player experience rather than treating implementation as something disconnected from design.
+## Salvaging the Operation
 
-Furthermore, I can never stray away too much from modding games, I can never get enough of it.
+![Abandoned HECU equipment among the biomass inside The Marsh](screenshot4.jpg)
+
+*The aftermath of the failed HECU operation runs through the level: abandoned equipment, dead soldiers, and pieces of a solution nobody alive fully understands anymore.*
+
+That setup gave the level a useful objective beyond simply moving through another Xen-infested facility. Gordon is retracing a broken plan, recovering whatever still works, and pushing toward the centre before the biomass consumes the rest.
+
+## From Graybox to Release
+
+I took my portion from the first layout pass through encounter iteration, environment work, and final implementation. The graybox had to function as movement space, combat space, and navigational space before any amount of glowing alien vegetation could make it look finished.
+
+This was also built around features introduced with Black Mesa's Xen update, in an engine branch that was not especially well documented at the time. A lot of the workflow came down to testing behaviour directly and learning where the tools stopped agreeing with the documentation. The new lighting system was especially esoteric: it mimicked ideas present in Unreal Engine 4, but kept that unmistakable Source Engine feeling.
+
+That is probably why this project still represents me rather well. I enjoy building playable spaces, not only systems, and I like staying close to what the player actually sees and does. Also, apparently, I can never stay away from modding games for very long.
+
+![The Flesh Marsh's entrance.](screenshot2.jpg)
