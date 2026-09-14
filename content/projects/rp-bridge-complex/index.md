@@ -2,7 +2,7 @@
 title: "rp_bridge_complex"
 description: "My first Garry's Mod map: a WW3RP event level built around a huge two-level bridge, a combat complex, and sewer flanking routes."
 summary: "A one-off nebulous.cloud event map, and my first attempt at connecting a large bridge, a firefight-heavy complex, and an underground flanking network."
-draft: true
+draft: false
 weight: 90
 projectSeries: "Personal"
 projectField: "Level Design"

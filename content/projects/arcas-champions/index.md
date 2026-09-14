@@ -107,8 +107,8 @@ Here are some Level Design Reels, for your viewing pleasure:
 ## Pipeline and Production Work
 
 One of the more infrastructure-heavy parts of my work on the project was the build pipeline. I created and
-maintained a fully-fledged internal plugin (Bevium Tools) built around the Unreal Build Tool and Unreal Automation Tool 
-to reduce friction in building andshipping the project.
+maintained a fully-fledged internal plugin (Bevium Tools) built around the Unreal Build Tool and Unreal Automation Tool
+to reduce friction in building and shipping the project.
 
 That work matters because iteration speed compounds:
 
@@ -118,7 +118,7 @@ That work matters because iteration speed compounds:
 
 I also took on internal coordination when needed. That did not mean formal management ownership in the
 traditional sense, but it did mean staying aware of the project's state, helping align day-to-day work,
-and supporting onboarding new team members and manage daily tasks when the team needed it.
+supporting the onboarding of new team members, and helping manage daily tasks when the team needed it.
 
 ## Engineering Takeaways
 

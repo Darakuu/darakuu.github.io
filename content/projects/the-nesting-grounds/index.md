@@ -2,7 +2,7 @@
 title: "The Nesting Grounds"
 description: "A Black Mesa single-player map that starts in a wrecked laboratory and eventually opens into a huge Xen wildlife testing ground."
 summary: "One of my most ambitious Black Mesa maps, following a surviving survey-team scientist out of a damaged laboratory and into an open Xen enclosure."
-draft: true
+draft: false
 weight: 70
 projectSeries: "Personal"
 projectField: "Level Design"

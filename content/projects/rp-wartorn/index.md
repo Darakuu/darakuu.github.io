@@ -2,7 +2,7 @@
 title: "rp_wartorn"
 description: "A huge snowy Garry's Mod battlefield I built for nebulous.cloud's WW3RP, with fortified positions, destructible buildings, and underground routes."
 summary: "Roughly 700 hours of multiplayer level design spread across snowy terrain, defensive compounds, destructible structures, caves, and a lot of Source Engine optimization work."
-draft: true
+draft: false
 weight: 80
 projectSeries: "Personal"
 projectField: "Level Design"
